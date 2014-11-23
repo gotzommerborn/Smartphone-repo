@@ -1,14 +1,13 @@
-# This programme does not create the so called "one data set" already in the first step (1), 
-# but this creation process is splitted over the multiple procedures. Therefore you will notice that 
-# "Merge the training and the test sets to create one data set" appears mutiple time because 
-# the logic of this step is splitted over ,uiple procedures.
-# This improves maintenance as it allows to easily append data to the data set, just by adding data set 
-# components to the final data set.
+#
+# Götz Ommerborn, November, 23th 2014.
+#
+# This program creates data set components ready for assembly to a data product which improves maintenance as it allows to easily 
+# add future data components to the data set. Therefore, this program does not create the so called "one data set" 
+# already in the first step (1) of the assignment, but this creation process is splitted over multiple procedures.
 
-# Throughout the code, comments marked with "##A" refer the steps as indicated by the assignment (see readme)
-# These ##A comments are not needed to understand the programme but are merely added to show how the programme
-# relates the assignment. 
-
+# Throughout the code, comments marked with "##A" refer the steps as indicated by the assignment (see also  readme)
+# These ##A comments are not needed to understand the program but are merely added to show how the program
+# relates the assignment.
 
 # a) Initialise
 
