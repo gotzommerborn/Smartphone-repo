@@ -2,7 +2,7 @@
 
 The assignment requires the below to be done:
 
-"Create one R script called run_analysis.R that does the following:
+*"Create one R script called run_analysis.R that does the following:
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 3. Uses descriptive activity names to name the activities in the data set.
@@ -11,7 +11,7 @@ The assignment requires the below to be done:
 
 and
 
-6. to upload your data set as a txt file, created with write.table() using row.name=FALSE."
+6. to upload your data set as a txt file, created with write.table() using row.name=FALSE."*
        
 ### ASSUMPTIONS
 The above task list indicates what needs to be done, and does not necessarily represent a programme structure. See also coursera data science thread https://class.coursera.org/getdata-009/forum/thread?thread_id=58. David HoodCommunity TA: 
@@ -52,7 +52,7 @@ The script extracts the variables which really represent a mean and not just all
 the variable 561 angle(Z,gravityMean)
  does not represent a mean. Variables that represent a real mean typically contain the string "-mean" in the variable name.
 
-The script uses the data.table package functionality to calculate the mean of the variables. The help of the data.table provides the following usage: "DT[,lapply(.SD,sum),by=x] ("apply through columns by group"), within the EXAMPLE section.  Data.table is known as being fast, but the main advantage on top of performance is the fact that you can add variables without the need to change this piece of code. The reason is that the .SD argument dynamically takes the columns which are not included in the "by" parameter. As a result, all variables except activity and subject are taken into account for mean calculation.
+The script uses the data.table package functionality to calculate the mean of the variables. The help of the data.table package shows the following usage of data,table: `"DT[,lapply(.SD,sum),by=x] (apply through columns by group)"`.  Data.table is known as being fast, but the main advantage on top of performance is the fact that you can add variables without the need to change this piece of code. The reason is that the .SD argument dynamically takes the columns which are not included in the "by" parameter. As a result, all variables except activity and subject are taken into account for mean calculation.
 
 ### INSTRUCTIONS TO RUN THE SCRIPT: 
 
