@@ -2,7 +2,7 @@
 
 The assignment requires the below to be done:
 
-*"Create one R script called run_analysis.R that does the following:
+*Create one R script called run_analysis.R that does the following:
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 3. Uses descriptive activity names to name the activities in the data set.
@@ -11,13 +11,12 @@ The assignment requires the below to be done:
 
 and
 
-6. to upload your data set as a txt file, created with write.table() using row.name=FALSE."*
+6. to upload your data set as a txt file, created with write.table() using row.name=FALSE.*
        
-### ASSUMPTIONS
+### ASSUMPTION
 The above task list indicates what needs to be done, and does not necessarily represent a programme structure. See also coursera data science thread https://class.coursera.org/getdata-009/forum/thread?thread_id=58. David HoodCommunity TA: 
 
-*"The really important bit is 5 has to come after the rest, because you are getting the data ready for 5 from the earlier section. The order of 2-4 isn't too critical. For example if you are using dply you pretty much have to do some fixing up on the variable names early on or it is going to complain about the duplicate names. If you are selecting out the columns with grep, you could (in theory) do the selecting out then fix up the names later on. But providing everything is sorted out by the end of 4 I wouldn't be worried."*
-"
+*The really important bit is 5 has to come after the rest, because you are getting the data ready for 5 from the earlier section. The order of 2-4 isn't too critical. For example if you are using dply you pretty much have to do some fixing up on the variable names early on or it is going to complain about the duplicate names. If you are selecting out the columns with grep, you could (in theory) do the selecting out then fix up the names later on. But providing everything is sorted out by the end of 4 I wouldn't be worried.*
 
 ### DATA STRUCTURE
 
@@ -52,7 +51,7 @@ The script extracts the variables which really represent a mean and not just all
 the variable 561 angle(Z,gravityMean)
  does not represent a mean. Variables that represent a real mean typically contain the string "-mean" in the variable name.
 
-The script uses the data.table package functionality to calculate the mean of the variables. The help of the data.table package shows the following usage of data,table: `"DT[,lapply(.SD,sum),by=x] (apply through columns by group)"`.  Data.table is known as being fast, but the main advantage on top of performance is the fact that you can add variables without the need to change this piece of code. The reason is that the .SD argument dynamically takes the columns which are not included in the "by" parameter. As a result, all variables except activity and subject are taken into account for mean calculation.
+The script uses the data.table package functionality to calculate the mean of the variables. The help of the data.table package shows the following usage of data.table: `"DT[,lapply(.SD,sum),by=x] (apply through columns by group)"`.  Data.table is known as being fast, but the main advantage on top of performance is the fact that you can add variables without the need to change this piece of code. The reason is that the .SD argument dynamically takes the columns which are not included in the "by" parameter. As a result, all variables except activity and subject are taken into account for mean calculation.
 
 ### INSTRUCTIONS TO RUN THE SCRIPT: 
 
