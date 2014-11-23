@@ -12,7 +12,8 @@ In below data table definition there are no variables as a row attribute; all ob
 ### Key/grouping attributes
 
 * activity: (type = character, possible values = WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
-* subject: (type = integer, possible values 1:30). comment: each ID refers to a specific person. 
+* subject: (type = integer, possible values 1:30). Each subject represents an ID which refers to a specific person. There are no meta data available (name, et cetera). 
+
 
 ### Variables
 
@@ -23,6 +24,7 @@ The original vaiables are described by the code book belonging to the following 
 The original data set can be optained here: 
 	https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
+```
 *		Output variable				Definition					Type			length.dec
 *	1	mean-of-tBodyAcc-mean()-X              	mean of 	tBodyAcc-mean()-X              	by activity, subject	numeric	"9.7"
 *	2	mean-of-tBodyAcc-mean()-Y              	mean of 	tBodyAcc-mean()-Y              	by activity, subject	numeric	"9.7"
@@ -70,6 +72,7 @@ The original data set can be optained here:
 *	44	mean-of-fBodyBodyGyroMag-meanFreq()    	mean of 	fBodyBodyGyroMag-meanFreq()    	by activity, subject	numeric	"9.7"
 *	45	mean-of-fBodyBodyGyroJerkMag-mean()    	mean of 	fBodyBodyGyroJerkMag-mean()    	by activity, subject	numeric	"9.7"
 *	46	mean-of-fBodyBodyGyroJerkMag-meanFreq()	mean of 	fBodyBodyGyroJerkMag-meanFreq()	by activity, subject	numeric	"9.7"
+```
 
 
 

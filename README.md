@@ -3,22 +3,20 @@
 The assignment requires the below to be done:
 
 "Create one R script called run_analysis.R that does the following:
-* 1) Merges the training and the test sets to create one data set.
-* 2) Extracts only the measurements on the mean and standard deviation for each measurement. 
-* 3) Uses descriptive activity names to name the activities in the data set.
-* 4) Appropriately labels the data set with descriptive variable names. 
-* 5) From the data set in step 4, creates a second, independent tidy data set with the average of each variable For each activity and each subject.
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+3. Uses descriptive activity names to name the activities in the data set.
+4. Appropriately labels the data set with descriptive variable names. 
+5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable For each activity and each subject.
 
 and
 
-* 6) to upload your data set as a txt file, created with write.table() using row.name=FALSE."
+6. to upload your data set as a txt file, created with write.table() using row.name=FALSE."
        
 ### ASSUMPTIONS
-The above task list indicates what needs to be done, and does not necessarily represent a programme structure. See also coursera data science thread https://class.coursera.org/getdata-009/forum/thread?thread_id=58.
+The above task list indicates what needs to be done, and does not necessarily represent a programme structure. See also coursera data science thread https://class.coursera.org/getdata-009/forum/thread?thread_id=58. David HoodCommunity TA: 
 
-"David HoodCommunity TA· 10 days ago 
-
-The really important bit is 5 has to come after the rest, because you are getting the data ready for 5 from the earlier section. The order of 2-4 isn't too critical. For example if you are using dply you pretty much have to do some fixing up on the variable names early on or it is going to complain about the duplicate names. If you are selecting out the columns with grep, you could (in theory) do the selecting out then fix up the names later on. But providing everything is sorted out by the end of 4 I wouldn't be worried.
+*"The really important bit is 5 has to come after the rest, because you are getting the data ready for 5 from the earlier section. The order of 2-4 isn't too critical. For example if you are using dply you pretty much have to do some fixing up on the variable names early on or it is going to complain about the duplicate names. If you are selecting out the columns with grep, you could (in theory) do the selecting out then fix up the names later on. But providing everything is sorted out by the end of 4 I wouldn't be worried."*
 "
 
 ### DATA STRUCTURE
@@ -42,9 +40,9 @@ The R script developed follows a general accepted programme structure (init, inp
 * a) Initialise
 * b) Get source data
 * c) Compile source data components. This part perfoms per component (measurements, activities and subjects) certain transformations wherer elevant: 
-        * c.1) Consolidate source data
-        * c.2) Subset source data
-        * c.3) Apply descriptive labels
+  * c.1) Consolidate source data
+  * c.2) Subset source data
+  * c.3) Apply descriptive labels
 * d) Assemble source data components to source data set
 * e) Create data product
 * f) Output data product
@@ -58,4 +56,4 @@ The script uses the data.table package functionality to calculate the mean of th
 
 ### INSTRUCTIONS TO RUN THE SCRIPT: 
 
-*adapt set working directory statement in initialise procedure. This piece may be improved to dynamically set de working directory.
+Adapt set working directory statement in initialise procedure. This piece may be improved to dynamically set de working directory.
