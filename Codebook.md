@@ -25,7 +25,7 @@ The original data set can be optained here:
 	https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 ```
---------Output variable-------------------------Definition--------------------------------------------------------------Type----Length.dec
+----Output variable---------------------Definition--------------------------------------------------------------Type----Length.dec
 1	mean-of-tBodyAcc-mean()-X              	mean of 	tBodyAcc-mean()-X              	by activity, subject	numeric	"9.7"
 2	mean-of-tBodyAcc-mean()-Y              	mean of 	tBodyAcc-mean()-Y              	by activity, subject	numeric	"9.7"
 3	mean-of-tBodyAcc-mean()-Z              	mean of 	tBodyAcc-mean()-Z              	by activity, subject	numeric	"9.7"
