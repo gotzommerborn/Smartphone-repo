@@ -1,20 +1,20 @@
-## Tidy data
+### Tidy data
 
 Bij definition, (video 03_04_reshapingData, page 2), tidy data complies to:
 
-*each variable forms a column
-*each observation forms a row
-*each table stores one type of observation (e.g. here body movements)
+* each variable forms a column
+* each observation forms a row
+* each table stores one type of observation (e.g. here body movements)
 
-In below data set there are no variables as a row attribute, all observations are in rows (aggregated to activity and subject, no observations are columnwise and the table only stores data on body movements. Therefore it is tidy.
+In below data table definition there are no variables as a row attribute; all observations are represented by rows (aggregated to activity and subject); no observations are represented columnwise; the data table definition tells that only data on body movements are stored. Therefore the data set will be tidy.
 
 
-## Key/grouping attributes
+### Key/grouping attributes
 
 * activity: (type = character, possible values = WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 * subject: (type = integer, possible values 1:30). comment: each ID refers to a specific person. 
 
-## Variables
+### Variables
 
 The below variables are aggregates of measures, aggregated by above activity and subject. Within each group of activity and subject the mean value of the original measures has been calculated. Therefore the below variables are indicated with the prefix "mean-of-". 
 
