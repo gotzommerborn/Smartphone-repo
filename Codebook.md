@@ -11,7 +11,7 @@ In below data table definition there are no variables as a row attribute; all ob
 
 ### Key/grouping attributes
 
-* activity: (type = character, possible values = WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+* activity: (type = character, possible values = "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING".
 * subject: (type = integer, possible values 1:30). Each subject represents an ID which refers to a specific person. There are no meta data available (name, et cetera). 
 
 
@@ -25,7 +25,7 @@ The original data set can be optained here:
 	https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 ```
-----Output variable---------------------Definition--------------------------------------------------------------Type----Length.dec
+----Output variable-------------------------Definition----------------------------------------------------------Type----Length.dec
 1	mean-of-tBodyAcc-mean()-X              	mean of 	tBodyAcc-mean()-X              	by activity, subject	numeric	"9.7"
 2	mean-of-tBodyAcc-mean()-Y              	mean of 	tBodyAcc-mean()-Y              	by activity, subject	numeric	"9.7"
 3	mean-of-tBodyAcc-mean()-Z              	mean of 	tBodyAcc-mean()-Z              	by activity, subject	numeric	"9.7"
