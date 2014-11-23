@@ -1,3 +1,15 @@
+# This programme does not create the so called "one data set" already in the first step (1), 
+# but this creation process is splitted over the multiple procedures. Therefore you will notice that 
+# "Merge the training and the test sets to create one data set" appears mutiple time because 
+# the logic of this step is splitted over ,uiple procedures.
+# This improves maintenance as it allows to easily append data to the data set, just by adding data set 
+# components to the final data set.
+
+# Throughout the code, comments marked with "##A" refer the steps as indicated by the assignment (see readme)
+# These ##A comments are not needed to understand the programme but are merely added to show how the programme
+# relates the assignment. 
+
+
 # a) Initialise
 
         print("Working .....")
@@ -7,6 +19,8 @@
 
 # b) Get source data
 
+        ##A Merge the training and the test sets to create one data set
+        
         # b.1) Measurements of variables
         x_train <- read.table("x_train.txt")
         x_test <- read.table("x_test.txt")
@@ -26,10 +40,10 @@
 
         # b.1) Measurements of variables
         
-        ## Merge the training and the test sets to create one data set
+        ##A Merge the training and the test sets to create one data set
         x_total <- rbind(x_train, x_test) 
         
-        ## Extract the measurements on the mean and standard deviation for each measurement
+        ##A Extract the measurements on the mean and standard deviation for each measurement
         
         
         # Variables that represent a real mean or std typically contain the string "-mean" or "-std" in the variable name.
@@ -37,17 +51,20 @@
         mean_std_variables <- all_variables[grep("-mean|:-std", all_variables[, 2]),]
         mean_std_subset <- x_total[,mean_std_variables[,1]]
 
-        ## Appropriately label the data set with descriptive variable names
+        ##A Appropriately label the data set with descriptive variable names
+        
         # Take the original variable names and add the term "mean of" to indicate that the mean of the original variabled are
         # calculated.
         colnames(mean_std_subset) <- paste("mean-of-", mean_std_variables[,2], sep="")
         
         # b.2) Activities
 
-        ## Merge the training and the test sets to create one data set
+        ##A Merge the training and the test sets to create one data set
+        
         y_total <- rbind(y_train, y_test)
 
-        ## Apply descriptive activity names to name the activities in the data set.
+        ##A Apply descriptive activity names to name the activities in the data set.
+        
         y_total[, 1] <- activity_names[y_total[, 1], 2] 
         # This replace the id's in the y-total column (assessed by [,1]) with the corresponding 
         # activity description in activity labels table (assessed by [,2])
@@ -60,7 +77,8 @@
         
         # b.3) Subjects (persons)
 
-        ## Merge the training and the test sets to create one data set
+        ##A Merge the training and the test sets to create one data set
+        
         subject_total <- rbind(subject_train, subject_test)
 
         colnames(subject_total) <- "subject"
@@ -68,11 +86,12 @@
 # c)    Assemble source data components to one source data set        
 
         ## Merge the training and the test sets to create one data set
+        
         data_set <- cbind(y_total, subject_total, mean_std_subset)
         
 # d)    Create data product
         
-        ## Create a second, independent tidy data set with the average of each variable for each activity and each subject.
+        ##A Create a second, independent tidy data set with the average of each variable for each activity and each subject.
 
         dt_data_set <- data.table(data_set)
         mean_dt_data_set <- dt_data_set[,lapply(.SD, function(x) mean(x)), by=list(activity, subject)]
@@ -84,7 +103,8 @@
         
 # 5)    Output
         
-        ## Output data product with txt file created with write.table() using row.name=FALSE
+        ##A Output data product with txt file created with write.table() using row.name=FALSE
+        
         write.table(mean_dt_data_set, "mean_dt_data_set.txt", row.name=FALSE)
         
 # 6)    Close
